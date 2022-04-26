@@ -1,46 +1,41 @@
-# Getting Started with Create React App
+# Github Searcher
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Allegro Summer E-Xperience: zadanie rekrutacyjne nr 2 (Frontend Software Engineer)
 
-## Available Scripts
+Aplikacja pozwala na wyszukiwanie użytkowników serwisu GitHub i wyświetlanie ich publicznych repozytoriów. 
 
-In the project directory, you can run:
+Wykorzystane technologie: React, Typescipt, React Query, React Testing Library, axios, Styled Components.
 
-### `npm start`
+Inne moduły: react-error-boundary, react-pagiante, github-username-regex.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Wymogi do uruchomienia aplikacji: 
+- Node >= 14.0.0 
+- npm >= 5.6
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Instrukcje do uruchomienia aplikacji:
+- Sklonuj repozytorium.
+- Wejdź w folder ze sklonowanym repozytorium.
+- W konsoli wpisz: ```npm i``` lub ```npm install```
+- następnie wpisz: ```npm start```
+- aby włączyć testy, wpisz w konsoli: ```npm t``` lub ```npm test```
 
-### `npm test`
+Aplikacje można również zobaczyć [TUTAJ](https://dziadoou.github.io/).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+GitHub API posiada swoje ograniczenia. Dla nieuwierzytelnionych użytkowników, limit wynosi 60 zapytań na godzinę (10 przy użyciu Search API). Aplikacja działa domyślnie dla właśnie takich użytkowników, jednak jeśli posiadasz konto na [GitHubie](https://github.com/), po zalogowaniu się możesz wejść w:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Settings -->  Developer Settings --> Personal access tokens --> Generate new token
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+i wygenerować token. Następnie, możesz utworzyć folder ```.env``` w root'cie aplikacji (folder zawierający ```package.json```) i utworzyć w nim zmienną
+```REACT_APP_GITHUB_TOKEN = wygenerowany_token```. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Robiąc to, zwiększysz limit zapytań do 5000 na sekundę (30 przy użyciu Search API).
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Uwagi do projektu
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Przy użytkownikach posiadających bardzo dużo repozytoriów (>1000) wprowadziłem ograniczenie wyświetlające tylko 1000 repozytoriów o największej liczbie gwiazdek (1000 jest limitem jaki nakłada na nas GitHub Search API)
+- Po wykorzystaniu przez użytkownika x-rate-limit'u (limit zapytań na godzinę), w konsoli pokaże nam się błąd o kodzie 403, zostanie wyświetlona tylko karta użytkownika bez jego repozytoriów.
+- Przy testowaniu w konsoli wyświetla się komunikat błędu o kodzie 404, wynika to z przeprowadzania jednego z testów.
+- Na końcu zdałem sobie sprawę, że powinienem był wykorzystać routing, żeby całość nie działa się na jednej stronie
+- Przy pisaniu testów zdałem sobie również sprawę z tego, że komponenty powinny być o wiele bardziej niezależne od siebie niż faktycznie są.
