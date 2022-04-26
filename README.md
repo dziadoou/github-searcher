@@ -19,7 +19,7 @@ Instrukcje do uruchomienia aplikacji:
 - następnie wpisz: ```npm start```
 - aby włączyć testy, wpisz w konsoli: ```npm t``` lub ```npm test```
 
-Aplikacje można również zobaczyć [TUTAJ](https://dziadoou.github.io/).
+Aplikację można również zobaczyć [TUTAJ](https://dziadoou.github.io/).
 
 
 GitHub API posiada swoje ograniczenia. Dla nieuwierzytelnionych użytkowników, limit wynosi 60 zapytań na godzinę (10 przy użyciu Search API). Aplikacja działa domyślnie dla właśnie takich użytkowników, jednak jeśli posiadasz konto na [GitHubie](https://github.com/), po zalogowaniu się możesz wejść w:
@@ -37,5 +37,9 @@ Robiąc to, zwiększysz limit zapytań do 5000 na sekundę (30 przy użyciu Sear
 - Przy użytkownikach posiadających bardzo dużo repozytoriów (>1000) wprowadziłem ograniczenie wyświetlające tylko 1000 repozytoriów o największej liczbie gwiazdek (1000 jest limitem jaki nakłada na nas GitHub Search API)
 - Po wykorzystaniu przez użytkownika x-rate-limit'u (limit zapytań na godzinę), w konsoli pokaże nam się błąd o kodzie 403, zostanie wyświetlona tylko karta użytkownika bez jego repozytoriów.
 - Przy testowaniu w konsoli wyświetla się komunikat błędu o kodzie 404, wynika to z przeprowadzania jednego z testów.
-- Na końcu zdałem sobie sprawę, że powinienem był wykorzystać routing, żeby całość nie działa się na jednej stronie
-- Przy pisaniu testów zdałem sobie również sprawę z tego, że komponenty powinny być o wiele bardziej niezależne od siebie niż faktycznie są.
+
+### Future improvements
+
+- poprawa obsługi błędów,
+- wykorzystanie React Router'a do nawigacji, aby aplikacja nie była wyłącznie na jednej ścieżce,
+- rozdrobnienie komponentów, przerobienie ich w ten sposób, aby były jak najmniej zależne od siebie
