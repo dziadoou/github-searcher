@@ -39,7 +39,7 @@ Robiąc to, zwiększysz limit zapytań do 5000 na sekundę (30 przy użyciu Sear
 - Przy testowaniu w konsoli wyświetla się komunikat błędu o kodzie 404, wynika to z przeprowadzania jednego z testów.
 
 ### Future improvements
-
 - poprawa obsługi błędów,
+- dodanie resetu stanu aplikacji, np. poprzez kliknięcie tytułu,
 - wykorzystanie React Router'a do nawigacji, aby aplikacja nie była wyłącznie na jednej ścieżce,
-- rozdrobnienie komponentów, przerobienie ich w ten sposób, aby były jak najmniej zależne od siebie
+- rozdrobnienie komponentów, przerobienie ich w ten sposób, aby były jak najmniej zależne od siebie.
