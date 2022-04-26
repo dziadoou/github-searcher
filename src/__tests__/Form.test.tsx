@@ -4,16 +4,15 @@ import userEvent from "@testing-library/user-event"
 import { Form } from "../components/Form"
 
 test("submitting the form calls onSubmit once", () => {
+  //given
+  const username = "test-username"
   const handleSubmit = jest.fn(e => e.preventDefault())
-  render(<Form onSubmit={handleSubmit} />)
-  const username = "basicusername"
-  const invalidUsername = "username---ee"
 
+  //when
+  render(<Form onSubmit={handleSubmit} />)
   userEvent.type(screen.getByRole("textbox"), username)
   userEvent.click(screen.getByRole("button"))
-  expect(handleSubmit).toBeCalledTimes(1)
 
-  userEvent.type(screen.getByRole("textbox"), invalidUsername)
-  userEvent.click(screen.getByRole("button"))
-  expect(handleSubmit).toBeCalledTimes(2)
+  //then
+  expect(handleSubmit).toBeCalledTimes(1)
 })

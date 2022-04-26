@@ -44,6 +44,16 @@ export const setupMocks = (handlers = []) => {
         ),
       )
     },
+    returnsRepositoryLanguages: (username, repoName, languages) => {
+      server.use(
+        rest.get(
+          `https://api.github.com/repos/${username}/${repoName}/languages`,
+          (req, res, ctx) => {
+            return res(ctx.json(languages))
+          },
+        ),
+      )
+    },
     returnsUserNotFound: username => {
       server.use(
         rest.get(

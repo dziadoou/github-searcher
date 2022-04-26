@@ -11,7 +11,7 @@ interface UserContentProps {
 }
 
 function UserContent({ username }: UserContentProps) {
-  const { isLoading, refetch, data } = useFetchData(
+  const { isLoading, isFetching, refetch, data } = useFetchData(
     `https://api.github.com/users/${username}`,
     username,
     "userData",
@@ -36,10 +36,14 @@ function UserContent({ username }: UserContentProps) {
           numOfRepos={numOfRepos}
         />
       )}
-      {data.public_repos > 0 ? (
-        <ReposResults username={username} numOfRepos={numOfRepos} />
+      {data.public_repos > 0 && !isFetching ? (
+        <ReposResults
+          username={username}
+          numOfRepos={numOfRepos}
+          reposPerPage={10}
+        />
       ) : (
-        <NoReposResult />
+        data.public_repos === 0 && <NoReposResult />
       )}
     </Wrapper>
   )

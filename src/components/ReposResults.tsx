@@ -5,10 +5,20 @@ import { RepoComponent } from "./RepoComponent"
 import { getNumOfReposToFetch } from "../utils/getNumOfReposToFetch"
 import { useFetchData } from "../hooks/useFetchData"
 
-function ReposResults({ username, numOfRepos }) {
+interface ReposResultsProps {
+  username: string
+  numOfRepos: number
+  reposPerPage: number
+}
+
+function ReposResults({
+  username,
+  numOfRepos,
+  reposPerPage = 10,
+}: ReposResultsProps) {
   const [currentPage, setCurrentPage] = React.useState(0)
 
-  const reposPerPage = 10
+  // const reposPerPage = 10
   const { numOfPages, reposToFetch } = getNumOfReposToFetch(
     numOfRepos,
     reposPerPage,

@@ -30,7 +30,7 @@ export function App() {
   function handleSubmit(event: React.FormEvent<UsernameFormElement>) {
     event.preventDefault()
     const value = event.currentTarget.elements.usernameInput.value
-    const isValidated = validateUsername(value)
+    const isValidated: boolean = validateUsername(value)
     if (isValidated) {
       setUsername(value)
       setWasValidated(true)

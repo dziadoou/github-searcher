@@ -9,8 +9,11 @@ import { setupMocks } from "../mocks/index"
 const server = setupMocks()
 
 test("renders App properly, with an input component with a placeholder", () => {
+  //when
   render(<App />)
   const inputElementWithPlaceholder = screen.getByPlaceholderText(/allegro/i)
+
+  //then
   expect(inputElementWithPlaceholder).toBeInTheDocument()
 })
 

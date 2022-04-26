@@ -2,12 +2,13 @@ import * as React from "react"
 import { screen, waitFor } from "@testing-library/react"
 import { renderComponent } from "../mocks/index"
 import { ReposResults } from "../components/ReposResults"
+import userEvent from "@testing-library/user-event"
 
 import { setupMocks } from "../mocks/index"
 
 const server = setupMocks()
 
-test(`should display names of all repos`, async () => {
+test(`should display a pagination bar`, async () => {
   // given
   const username = "allegro"
   const numOfRepos = 3
@@ -42,7 +43,7 @@ test(`should display names of all repos`, async () => {
     <ReposResults
       username={username}
       numOfRepos={numOfRepos}
-      reposPerPage={10}
+      reposPerPage={2}
     />,
   )
   await waitFor(() => {
@@ -53,7 +54,5 @@ test(`should display names of all repos`, async () => {
   )
 
   // then
-  expect(screen.getByText(repoName1)).toBeInTheDocument()
-  expect(screen.getByText(repoName2)).toBeInTheDocument()
-  expect(screen.getByText(repoName3)).toBeInTheDocument()
+  expect(screen.getByRole("button", { name: /next page/i })).toBeInTheDocument()
 })

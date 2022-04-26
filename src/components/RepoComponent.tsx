@@ -33,7 +33,7 @@ function RepoComponent({
     { enable: areDetailsOpen },
   )
 
-  let repoLanguages
+  let repoLanguages: string[] = [""]
   if (repoDetails.data) repoLanguages = Object.keys(repoDetails.data)
 
   return (
@@ -46,13 +46,14 @@ function RepoComponent({
       <span>{starsCount} ⭐</span>
 
       {repoDetails.isLoading ? (
-        <Spinner />
+        <Spinner data-testid="spinner" />
       ) : (
         <Checkbox
           repoName={repoName}
           areDetailsOpen={areDetailsOpen}
           didJustRender={didJustRender}
           handleDetailsClick={handleDetailsClick}
+          data-testid="input"
         />
       )}
       {areDetailsOpen && repoDetails.data && repoLanguages.length > 0 ? (

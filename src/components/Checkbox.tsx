@@ -17,7 +17,12 @@ function Checkbox({
 }: CheckboxProps) {
   return (
     <CheckboxContainer isChecked={areDetailsOpen} didJustRender={didJustRender}>
-      <input type="checkbox" id={`${repoName}`} onClick={handleDetailsClick} />
+      <input
+        type="checkbox"
+        id={`${repoName}`}
+        onClick={handleDetailsClick}
+        data-testid="checkbox"
+      />
       <label htmlFor={`${repoName}`}>
         <img alt="arrow-icon" src={DetailsIcon} />
       </label>

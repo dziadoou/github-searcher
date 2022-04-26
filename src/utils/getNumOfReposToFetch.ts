@@ -5,13 +5,13 @@ export function getNumOfReposToFetch(
 ) {
   const githubSearchAPILimit = 1000
 
-  let reposPossibleToFetch
+  let reposPossibleToFetch: number = 0
   if (numOfRepos > githubSearchAPILimit) {
     reposPossibleToFetch = githubSearchAPILimit
   } else reposPossibleToFetch = numOfRepos
 
   const numOfPages = Math.ceil(reposPossibleToFetch / reposPerPage)
-  let reposToFetch
+  let reposToFetch: number = 0
   if (currentPage === numOfPages - 1) {
     reposToFetch = reposPossibleToFetch - reposPerPage * currentPage
   } else reposToFetch = reposPerPage
