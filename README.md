@@ -4,7 +4,7 @@
 
 Aplikacja pozwala na wyszukiwanie użytkowników serwisu GitHub i wyświetlanie ich publicznych repozytoriów. 
 
-Wykorzystane technologie: React, Typescipt, React Query, React Testing Library, axios, Styled Components.
+Wykorzystane technologie: React, Typescipt, React Query, React Testing Library, axios, Styled Components, GitHub API.
 
 Inne moduły: react-error-boundary, react-pagiante, github-username-regex.
 
