@@ -2,7 +2,7 @@
   "name": "github-searcher",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://dziadoou.github.io/",
+  "homepage": "https://dziadoou.github.io/dziadoou.github.io",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^12.1.5",
