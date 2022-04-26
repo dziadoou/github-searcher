@@ -2,6 +2,7 @@
   "name": "github-searcher",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://dziadoou.github.io/github-searcher",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^12.1.5",
@@ -14,6 +15,7 @@
     "@types/styled-components": "^5.1.25",
     "axios": "^0.26.1",
     "dotenv": "^16.0.0",
+    "gh-pages": "^3.2.3",
     "github-username-regex": "^1.0.0",
     "jest": "^27.5.1",
     "msw": "^0.39.2",
@@ -32,7 +34,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

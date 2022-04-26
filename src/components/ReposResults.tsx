@@ -18,7 +18,6 @@ function ReposResults({
 }: ReposResultsProps) {
   const [currentPage, setCurrentPage] = React.useState(0)
 
-  // const reposPerPage = 10
   const { numOfPages, reposToFetch } = getNumOfReposToFetch(
     numOfRepos,
     reposPerPage,

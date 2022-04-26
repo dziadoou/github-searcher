@@ -2,7 +2,6 @@ import * as React from "react"
 import { screen, waitFor } from "@testing-library/react"
 import { renderComponent } from "../mocks/index"
 import { ReposResults } from "../components/ReposResults"
-import userEvent from "@testing-library/user-event"
 
 import { setupMocks } from "../mocks/index"
 
