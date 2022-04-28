@@ -1,6 +1,8 @@
+### allegro-summer-experience-2022
+adres e-mail: krzysiek.dziadkowiec@gmail.com
+
 # Github Searcher
 
-## Allegro Summer E-Xperience: zadanie rekrutacyjne nr 2 (Frontend Software Engineer)
 
 Aplikacja pozwala na wyszukiwanie użytkowników serwisu GitHub i wyświetlanie ich publicznych repozytoriów. 
 
